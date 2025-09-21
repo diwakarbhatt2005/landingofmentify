@@ -33,48 +33,6 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-slideInFromLeft {
-  animation: slideInFromLeft 0.6s ease-out forwards;
-}
-
-.animate-slideInFromRight {
-  animation: slideInFromRight 0.6s ease-out forwards;
-}
-
-.animate-slide-in-up {
-  animation: slideInUp 0.8s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.6s ease-out forwards;
-}
-
-/* Staggered animations */
-.animate-slide-in-left {
-  animation: slideInFromLeft 0.8s ease-out forwards;
-}
-
-.animate-slide-in-right {
-  animation: slideInFromRight 0.8s ease-out forwards;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Gradient backgrounds */
-.bg-gradient-radial {
-  background: radial-gradient(var(--tw-gradient-stops));
-}
-
 /* Modern light mode background patterns */
 .bg-light-pattern {
   background-image: 
