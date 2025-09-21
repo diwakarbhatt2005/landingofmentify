@@ -55,24 +55,24 @@ const Shop: React.FC = () => {
               AI Buddy Store
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              Transform Your Life with <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">AI Buddies</span>
+              Mentify AI Shop
             </h2>
-            <p className="text-xl text-slate-600 dark:text-neutral-400 max-w-3xl mx-auto">
-              Choose from individual AI Buddies or complete packages designed to revolutionize your personal and professional growth
-            </p>
+            
           </div>
 
-          {/* Featured Products Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {featuredProducts.map((product) => (
-              <div 
-                key={product.id}
-                className="group relative bg-white/90 dark:bg-neutral-900 border border-slate-200/30 dark:border-neutral-800 rounded-3xl p-4 transition-all duration-300 transform hover:-translate-y-2 shadow-lg animate-slide-in-up min-h-[282px]"
-              >
-                <div className="relative">
-                  <div className="w-40 h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-700 flex items-center justify-center transition-all duration-500 relative overflow-hidden rounded-2xl mx-auto mb-4">
+          {/* Featured Products - single line on md+ */}
+          <div className="mb-16">
+            <div className="flex flex-col md:flex-row md:gap-8 lg:gap-8">
+              {featuredProducts.map((product) => (
+                <div 
+                  key={product.id}
+                  className="w-full md:flex-1 md:max-w-[33%] group relative bg-white/90 dark:bg-neutral-900 border border-slate-200/30 dark:border-neutral-800 rounded-3xl p-4 transition-all duration-300 transform hover:-translate-y-2 shadow-lg animate-slide-in-up min-h-[280px] flex flex-col"
+                >
+                <div className="relative w-full overflow-hidden rounded-2xl mb-4">
+                  {/* Make image area full width with fixed aspect ratio like ProductList */}
+                  <div className="w-full h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-700 flex items-center justify-center transition-all duration-500 relative overflow-hidden">
                     <img 
-                      src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1600" 
                       alt="AI Bot"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -83,21 +83,18 @@ const Shop: React.FC = () => {
                     </button>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 mt-3">
                     {product.title}
                   </h3>
 
-                  <div className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-2">
-                    {/* show description as up to two small lines/bullets if applicable */}
+                  <div className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-2 flex-grow">
                     <p className="text-sm">{product.description}</p>
                   </div>
 
-                  <div className="mt-6">
+                  <div className="mt-4">
                     <div className="flex flex-col gap-3">
-                      {/* Render description more prominently instead of price/button */}
                       <ul className="text-sm text-slate-600 dark:text-neutral-400 space-y-1 mb-3 list-disc list-inside">
                         {(() => {
-                          // Split description into up to two bullet lines by ' + ' or sentences
                           const parts = (product.description || '').split(' + ').flatMap(s => s.split('.').map(p => p.trim()).filter(Boolean));
                           return parts.slice(0, 2).map((line, idx) => (
                             <li key={idx}>{line}</li>
@@ -110,6 +107,7 @@ const Shop: React.FC = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
 
           {/* CTA Section */}
