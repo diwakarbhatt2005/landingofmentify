@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { ShoppingBag, ArrowRight, Sparkles, Star, Zap } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Sparkles, Bot, Heart } from 'lucide-react';
 
 const Shop: React.FC = () => {
   const handleExploreShop = () => {
@@ -67,57 +67,45 @@ const Shop: React.FC = () => {
             {featuredProducts.map((product) => (
               <div 
                 key={product.id}
-                className="group relative bg-white/90 dark:bg-neutral-900 border border-slate-200/50 dark:border-neutral-800 rounded-3xl p-6 hover:border-cyan-500/50 dark:hover:border-cyan-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/10 shadow-lg shadow-blue-500/5 animate-slide-in-up"
+                className="group relative bg-white/90 dark:bg-neutral-900 border border-slate-200/30 dark:border-neutral-800 rounded-3xl p-4 transition-all duration-300 transform hover:-translate-y-2 shadow-lg animate-slide-in-up min-h-[282px]"
               >
-                {product.badge && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className={`px-4 py-1 rounded-full text-xs font-bold text-white shadow-lg ${
-                      product.badge === 'FEATURED' 
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 shadow-cyan-500/25' 
-                        : 'bg-gradient-to-r from-violet-500 to-purple-600 shadow-violet-500/25'
-                    }`}>
-                      <Star className="w-3 h-3 inline mr-1" />
-                      {product.badge}
-                    </div>
+                <div className="relative">
+                  <div className="w-40 h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-700 flex items-center justify-center transition-all duration-500 relative overflow-hidden rounded-2xl mx-auto mb-4">
+                    <img 
+                      src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      alt="AI Bot"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#02a2bd]/20 to-transparent"></div>
+                    <Bot className="absolute bottom-3 right-3 h-6 w-6 text-white drop-shadow-lg" />
+                    <button className="absolute top-3 left-3 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Heart className="h-4 w-4 text-gray-600" />
+                    </button>
                   </div>
-                )}
 
-                <div className="text-center">
-                  <div className={`w-16 h-16 ${
-                    product.badge 
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/25' 
-                      : 'bg-gradient-to-r from-slate-600 to-slate-700'
-                  } rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl group-hover:scale-110 transition-transform duration-300`}>
-                    {product.icon}
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                     {product.title}
                   </h3>
-                  
-                  <p className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-4">
-                    {product.description}
-                  </p>
 
-                  <div className="space-y-3">
-                    <div className="text-center">
-                      <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${
-                        product.badge
-                          ? 'bg-cyan-500/20 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400'
-                          : 'bg-slate-100 dark:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-slate-700 dark:text-neutral-300'
-                      }`}>
-                        {product.badge && <Zap className="w-4 h-4 mr-1" />}
-                        {product.price}
-                      </div>
+                  <div className="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed mb-2">
+                    {/* show description as up to two small lines/bullets if applicable */}
+                    <p className="text-sm">{product.description}</p>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex flex-col gap-3">
+                      {/* Render description more prominently instead of price/button */}
+                      <ul className="text-sm text-slate-600 dark:text-neutral-400 space-y-1 mb-3 list-disc list-inside">
+                        {(() => {
+                          // Split description into up to two bullet lines by ' + ' or sentences
+                          const parts = (product.description || '').split(' + ').flatMap(s => s.split('.').map(p => p.trim()).filter(Boolean));
+                          return parts.slice(0, 2).map((line, idx) => (
+                            <li key={idx}>{line}</li>
+                          ));
+                        })()}
+                      </ul>
+                      <p className="text-sm text-slate-500 dark:text-neutral-400">Learn more about this product or contact us for full details.</p>
                     </div>
-
-                    {product.discount && (
-                      <div className="text-center">
-                        <span className="inline-block bg-green-500/20 border border-green-500/30 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs font-medium">
-                          {product.discount}
-                        </span>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
