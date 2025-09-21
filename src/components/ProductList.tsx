@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { ExternalLink, Star, Zap } from 'lucide-react';
 import { aiBuddies } from '../data/content';
