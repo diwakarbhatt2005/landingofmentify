@@ -2,11 +2,11 @@ import { AIBuddy, BusinessOpportunity } from '../types';
 
 export const businessOpportunities: BusinessOpportunity[] = [
   {
-    id: 'investor',
-    title: 'INVESTOR',
+    id: 'business-associate',
+    title: 'BUSINESS ASSOCIATE',
     description: {
       compact: 'Purchase positions in our profit pools and grow your wealth. No sales required.',
-      full: `As an Investor, you can directly purchase positions in our 10 profit pools ranging from Pool-1 ($1,900) to Pool-10 ($10,000,000). 
+      full: `As a Business Associate, you can directly purchase positions in our 10 profit pools ranging from Pool-1 ($1,900) to Pool-10 ($10,000,000). 
 
 Key Benefits:
 • Receive free AI Buddies (1-6 depending on pool level)
@@ -124,7 +124,7 @@ export const aiBuddies: AIBuddy[] = [
     title: 'Finance & Real Estate Buddy',
     description: {
       compact: 'Your personal guide for investments, savings, and opportunities.',
-      full: 'Your expert financial advisor and real estate consultant in AI form. This Buddy provides personalized guidance on investments, savings strategies, real estate opportunities, and financial planning. It stays updated with market trends, offers portfolio advice, and helps you make informed financial decisions. Whether you\'re a beginner or experienced investor, this AI companion helps you navigate the complex world of finance and real estate with confidence and expertise.'
+      full: 'Your expert financial advisor and real estate consultant in AI form. This Buddy provides personalized guidance on investments, savings strategies, real estate opportunities, and financial planning. It stays updated with market trends, offers portfolio advice, and helps you make informed financial decisions. Whether you\'re a beginner or experienced business associate, this AI companion helps you navigate the complex world of finance and real estate with confidence and expertise.'
     },
     image: '💰',
     price: 'From $300/year'

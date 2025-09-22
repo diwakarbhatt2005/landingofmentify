@@ -55,13 +55,13 @@ const BusinessOpportunity: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3: As an Investor */}
+            {/* Card 3: As a Business Associate */}
             <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 rounded-3xl p-8 lg:p-10 shadow-md">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl transition-transform duration-300 shadow-lg shadow-cyan-500/25">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">As an Investor</h3>
+                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">As a Business Associate</h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-2 text-sm">
                   Profit Pools: Purchase positions in our 10 profit pools, from $1,900 to $10,000,000.
                 </p>
