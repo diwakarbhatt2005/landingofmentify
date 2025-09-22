@@ -69,14 +69,16 @@ const Shop: React.FC = () => {
                   className="w-full md:flex-1 md:max-w-[33%] group relative bg-white/90 dark:bg-neutral-900 border border-slate-200/30 dark:border-neutral-800 rounded-3xl p-4 transition-all duration-300 transform hover:-translate-y-2 shadow-lg animate-slide-in-up min-h-[280px] flex flex-col"
                 >
                 <div className="relative w-full overflow-hidden rounded-2xl mb-4">
-                  {/* Make image area full width with fixed aspect ratio like ProductList */}
-                  <div className="w-full h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-700 flex items-center justify-center transition-all duration-500 relative overflow-hidden">
-                    <img 
-                      src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-                      alt="AI Bot"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#02a2bd]/20 to-transparent"></div>
+                  {/* Make image area full width with fixed aspect ratio and inner padding */}
+                  <div className="w-full h-40 bg-transparent flex items-center justify-center transition-all duration-500 relative overflow-hidden">
+                    <div className="w-full h-full overflow-hidden rounded-xl">
+                      <img 
+                        src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                        alt="AI Bot"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#02a2bd]/20 to-transparent pointer-events-none rounded-xl"></div>
                     <Bot className="absolute bottom-3 right-3 h-6 w-6 text-white drop-shadow-lg" />
                     <button className="absolute top-3 left-3 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                       <Heart className="h-4 w-4 text-gray-600" />

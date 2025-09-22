@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-700 shadow-sm' 
         : 'bg-white/80 dark:bg-transparent backdrop-blur-sm'
     }`}>
-      <nav className="w-full px-0 py-4">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 py-4"> {/* add horizontal padding to nav container */}
         <div className="flex items-center justify-between w-full">
           {/* Left side: Logo - flush to left */}
           <div className="flex items-center space-x-3 ml-0">
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Right side: Desktop nav (md+) and Mobile controls (sm) - flush to right */}
-          <div className="flex items-center space-x-8 mr-0">
+          <div className="flex items-center space-x-6 mr-0">
             {/* Mobile controls (visible on small screens) */}
             <div className="md:hidden flex items-center space-x-2">
               <button
@@ -66,31 +66,31 @@ const Header: React.FC = () => {
             </div>
 
             {/* Desktop Navigation (visible on md+) */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium"
+                className="px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium rounded-md"
               >
                 About Us
               </button>
               <button 
                 onClick={() => scrollToSection('business')}
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium"
+                className="px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium rounded-md"
               >
                 Business Opportunity
               </button>
               <button 
                 onClick={() => scrollToSection('shop')}
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium"
+                className="px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 font-medium rounded-md"
               >
                 Shop
               </button>
-              <button className="text-slate-700 dark:text-white hover:underline transition-all duration-200 font-medium">
+              <button className="px-3 py-2 text-slate-700 dark:text-white hover:underline transition-all duration-200 font-medium rounded-md">
                 Login
               </button>
               <button
                 onClick={toggleTheme}
-                className="ml-[2px] mr-[4px] text-slate-700 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-200"
+                className="ml-[2px] mr-[4px] p-2 text-slate-700 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-200 rounded-md"
                 aria-label="Toggle theme"
               >
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
